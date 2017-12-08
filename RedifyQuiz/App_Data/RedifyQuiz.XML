@@ -493,11 +493,23 @@
             </summary>
             <returns>integer</returns>
         </member>
+        <member name="M:RedifyQuiz.Controllers.QuizController.GetReversedWords(System.String)">
+            <summary>
+            Reverses the letters of each word in a sentence.
+            </summary>
+            <returns>integer</returns>
+        </member>
         <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Int32)">
             <summary>
             Gets nth Fibonacci Number
             </summary>
             <param name="n"></param>
+            <returns>integer</returns>
+        </member>
+        <member name="M:RedifyQuiz.Utils.Utilities.ReverseWords(System.String)">
+            <summary>
+            Reverses the letters of each word in a sentence.
+            </summary>
             <returns>integer</returns>
         </member>
     </members>

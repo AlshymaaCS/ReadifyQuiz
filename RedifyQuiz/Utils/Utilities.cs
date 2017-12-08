@@ -1,4 +1,7 @@
-﻿namespace RedifyQuiz.Utils
+﻿using System;
+using System.Linq;
+
+namespace RedifyQuiz.Utils
 {
     public class Utilities
     {
@@ -18,6 +21,16 @@
                 b += t;
             }
             return b;
+        }
+
+        /// <summary>
+        /// Reverses the letters of each word in a sentence.
+        /// </summary>
+        /// <returns>integer</returns>
+        public static string ReverseWords(string sentence)
+        {
+            var reversedWords = string.Join(" ", sentence.Split(' ').Select(x => new String(x.Reverse().ToArray())));
+            return reversedWords;
         }
     }
 }

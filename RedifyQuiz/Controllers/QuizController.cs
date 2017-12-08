@@ -38,6 +38,18 @@ namespace RedifyQuiz.Controllers
         }
 
 
+        /// <summary>
+        /// Reverses the letters of each word in a sentence.
+        /// </summary>
+        /// <returns>integer</returns>
+        [Route("api/ReverseWords")]
+        [HttpGet]
+        public IHttpActionResult GetReversedWords(string sentence)
+        {
+            return Ok(Utilities.ReverseWords(sentence));
+        }
+
+
 
 
     }
