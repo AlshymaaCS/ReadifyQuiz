@@ -505,7 +505,7 @@
             </summary>
             <returns>string</returns>
         </member>
-        <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Int32)">
+        <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Double)">
             <summary>
             Gets nth Fibonacci Number
             </summary>
