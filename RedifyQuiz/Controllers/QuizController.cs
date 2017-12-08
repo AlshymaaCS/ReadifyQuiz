@@ -26,8 +26,8 @@ namespace RedifyQuiz.Controllers
         [HttpGet]
         public IHttpActionResult GetFibonacci(string n)
         {
-            int nth;
-            if (int.TryParse(n, out nth))
+            double nth;
+            if (double.TryParse(n, out nth))
             {
                 return Ok(Utilities.NthFibonacciNumber(nth));
             }

@@ -8,19 +8,33 @@ namespace RedifyQuiz.Utils
         /// <summary>
         /// Gets nth Fibonacci Number
         /// </summary>
-        /// <param name="n"></param>
+        /// <param name="n"> nth number</param>
         /// <returns>integer</returns>
         public static int NthFibonacciNumber(double n)
         {
-            int a = 0;
-            int b = 1;
-            while (n-- > 1)
-            {
-                int t = a;
-                a = b;
-                b += t;
-            }
-            return b;
+            if (n == 0) return 0; //To return the first Fibonacci number   
+            if (n == 1) return 1; //To return the second Fibonacci number   
+            if (n > 0) return PositiveFib(n);
+            else return NegativeFib(n);
+
+        }
+        //Fn = Fn − 1 + Fn − 2
+        private static int PositiveFib(double n)
+        {
+            if (n == 0) return 0;
+            if (n == 1) return 1;
+
+            return PositiveFib(n - 1) + PositiveFib(n - 2);
+        }
+
+
+        //F(n − 2) = F(n) − F(n − 1)
+        private static int NegativeFib(double n)
+        {
+            if (n == 0) return 0;
+            if (n == 1) return 1;
+
+            return NegativeFib(n + 2) - NegativeFib(n + 1);
         }
 
         /// <summary>
