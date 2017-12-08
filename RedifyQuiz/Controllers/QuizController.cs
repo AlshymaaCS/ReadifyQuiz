@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using RedifyQuiz.Utils;
+using System.Web.Http;
 
 namespace RedifyQuiz.Controllers
 {
@@ -11,10 +12,32 @@ namespace RedifyQuiz.Controllers
         /// <returns>Token string</returns>
         [Route("api/Token")]
         [HttpGet]
-        public string GetToken()
+        public IHttpActionResult GetToken()
         {
-            return "13e75793-25bc-409f-9fe7-c65498762140";
+            return Ok("13e75793-25bc-409f-9fe7-c65498762140");
         }
+
+
+        /// <summary>
+        /// Gets the nth number in the fibonacci sequence.
+        /// </summary>
+        /// <returns>integer</returns>
+        [Route("api/Fibonacci")]
+        [HttpGet]
+        public IHttpActionResult GetFibonacci(string n)
+        {
+            int nth;
+            if (int.TryParse(n, out nth))
+            {
+                return Ok(Utilities.NthFibonacciNumber(nth));
+            }
+            else
+            {
+                return BadRequest("The request is invalid.");
+            }
+        }
+
+
 
 
     }

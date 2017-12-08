@@ -483,9 +483,22 @@
         </member>
         <member name="M:RedifyQuiz.Controllers.QuizController.GetToken">
             <summary>
-            Gets token
+            Gets readify token
             </summary>
             <returns>Token string</returns>
+        </member>
+        <member name="M:RedifyQuiz.Controllers.QuizController.GetFibonacci(System.String)">
+            <summary>
+            Gets the nth number in the fibonacci sequence.
+            </summary>
+            <returns>integer</returns>
+        </member>
+        <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Int32)">
+            <summary>
+            Gets nth Fibonacci Number
+            </summary>
+            <param name="n"></param>
+            <returns>integer</returns>
         </member>
     </members>
 </doc>
