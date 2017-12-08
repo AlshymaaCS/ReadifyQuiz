@@ -49,7 +49,16 @@ namespace RedifyQuiz.Controllers
             return Ok(Utilities.ReverseWords(sentence));
         }
 
-
+        /// <summary>
+        /// Returns the type of triange given the lengths of its sides
+        /// </summary>
+        /// <returns>string</returns>
+        [Route("api/TriangleType")]
+        [HttpGet]
+        public IHttpActionResult GetTriangleType(int a, int b, int c)
+        {
+            return Ok(Utilities.TriangleType(a, b, c));
+        }
 
 
     }

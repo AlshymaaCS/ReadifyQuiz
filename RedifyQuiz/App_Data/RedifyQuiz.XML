@@ -499,6 +499,12 @@
             </summary>
             <returns>integer</returns>
         </member>
+        <member name="M:RedifyQuiz.Controllers.QuizController.GetTriangleType(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the type of triange given the lengths of its sides
+            </summary>
+            <returns>string</returns>
+        </member>
         <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Int32)">
             <summary>
             Gets nth Fibonacci Number
@@ -511,6 +517,15 @@
             Reverses the letters of each word in a sentence.
             </summary>
             <returns>integer</returns>
+        </member>
+        <member name="M:RedifyQuiz.Utils.Utilities.TriangleType(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the type of triange given the lengths of its sides
+            </summary>
+            <param name="a">side a</param>
+            <param name="b">side b</param>
+            <param name="c">side c</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

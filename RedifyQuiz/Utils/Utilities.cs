@@ -32,5 +32,24 @@ namespace RedifyQuiz.Utils
             var reversedWords = string.Join(" ", sentence.Split(' ').Select(x => new String(x.Reverse().ToArray())));
             return reversedWords;
         }
+
+        /// <summary>
+        /// Returns the type of triange given the lengths of its sides
+        /// </summary>
+        /// <param name="a">side a</param>
+        /// <param name="b">side b</param>
+        /// <param name="c">side c</param>
+        /// <returns></returns>
+        internal static string TriangleType(int a, int b, int c)
+        {
+            int count = 0;
+            if (a - b != 0) count++;
+            if (b - c != 0) count++;
+            if (c - a != 0) count++;
+
+            var types = new[] { "equilateral", "Error", "isoceles", "scalene" };
+
+            return types[count];
+        }
     }
 }
