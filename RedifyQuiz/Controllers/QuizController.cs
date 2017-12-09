@@ -58,7 +58,14 @@ namespace RedifyQuiz.Controllers
         [HttpGet]
         public IHttpActionResult GetReversedWords(string sentence)
         {
-            return Ok(Utilities.ReverseWords(sentence));
+            try
+            {
+                return Ok(Utilities.ReverseWords(sentence));
+            }
+            catch (Exception)
+            {
+                return BadRequest("The request is invalid.");
+            }
         }
 
         /// <summary>
@@ -69,7 +76,14 @@ namespace RedifyQuiz.Controllers
         [HttpGet]
         public IHttpActionResult GetTriangleType(int a, int b, int c)
         {
-            return Ok(Utilities.TriangleType(a, b, c));
+            try
+            {
+                return Ok(Utilities.TriangleType(a, b, c));
+            }
+            catch (Exception)
+            {
+                return BadRequest("The request is invalid.");
+            }
         }
 
 

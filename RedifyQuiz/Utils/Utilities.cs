@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 
 namespace RedifyQuiz.Utils
 {
@@ -40,9 +41,12 @@ namespace RedifyQuiz.Utils
         /// Reverses the letters of each word in a sentence.
         /// </summary>
         /// <returns>integer</returns>
-        public static string ReverseWords(string sentence)
+        public static string ReverseWords(string s)
         {
-            var reversedWords = string.Join(" ", sentence.Split(' ').Select(x => new String(x.Reverse().ToArray())));
+            string sentence = HttpUtility.HtmlEncode(s);
+            var reversedWords = string.Join(" ", sentence.Split(' ')
+                .Select(x => new String(x.Reverse().ToArray())));
+            reversedWords = HttpUtility.HtmlDecode(reversedWords);
             return reversedWords;
         }
 
@@ -55,14 +59,37 @@ namespace RedifyQuiz.Utils
         /// <returns></returns>
         internal static string TriangleType(int a, int b, int c)
         {
-            int count = 0;
-            if (a - b != 0) count++;
-            if (b - c != 0) count++;
-            if (c - a != 0) count++;
+            if (a <= 0 || b <= 0 || c <= 0)
+            {
+                return "Error";
+            }
+            if (((b + c) <= a) || ((a + c) <= b) || ((a + b) <= c))
+            {
+                return "Error";
+            }
 
-            var types = new[] { "Equilateral", "Error", "Isosceles", "Scalene" };
+            if ((Math.Abs(b - c) >= a) || (Math.Abs(a - c) >= b) || (Math.Abs(a - b) >= c))
+            {
+                return "Error";
+            }
 
-            return types[count];
+            //check if all sides are equal
+            if (a == b && a == c)
+            {
+                return "Equilateral";
+            }
+
+            //check if any two sides are equal
+            if (a == b || a == c || b == c)
+            {
+                return "Isosceles";
+            }
+            else
+            {
+                return "Scalene";
+            }
+
         }
+
     }
 }
