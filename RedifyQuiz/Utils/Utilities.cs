@@ -10,7 +10,7 @@ namespace RedifyQuiz.Utils
         /// </summary>
         /// <param name="n"> nth number</param>
         /// <returns>integer</returns>
-        public static int NthFibonacciNumber(double n)
+        public static long NthFibonacciNumber(long n)
         {
             if (n == 0) return 0; //To return the first Fibonacci number   
             if (n == 1) return 1; //To return the second Fibonacci number   
@@ -19,22 +19,21 @@ namespace RedifyQuiz.Utils
 
         }
         //Fn = Fn − 1 + Fn − 2
-        private static int PositiveFib(double n)
+        private static long PositiveFib(long n, long one = 1, long zero = 0)
         {
-            if (n == 0) return 0;
-            if (n == 1) return 1;
-
-            return PositiveFib(n - 1) + PositiveFib(n - 2);
+            if (n == 0) return zero;
+            if (n == 1) return one;
+            return PositiveFib(n - 1, one + zero, one);
         }
 
 
         //F(n − 2) = F(n) − F(n − 1)
-        private static int NegativeFib(double n)
+        private static long NegativeFib(long n, long one = 1, long zero = 0)
         {
-            if (n == 0) return 0;
-            if (n == 1) return 1;
+            if (n == 0) return zero;
+            if (n == 1) return one;
 
-            return NegativeFib(n + 2) - NegativeFib(n + 1);
+            return NegativeFib(n + 1, zero - one, one);
         }
 
         /// <summary>
@@ -61,7 +60,7 @@ namespace RedifyQuiz.Utils
             if (b - c != 0) count++;
             if (c - a != 0) count++;
 
-            var types = new[] { "equilateral", "Error", "isoceles", "scalene" };
+            var types = new[] { "Equilateral", "Error", "Isosceles", "Scalene" };
 
             return types[count];
         }

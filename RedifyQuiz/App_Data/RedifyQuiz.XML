@@ -505,11 +505,11 @@
             </summary>
             <returns>string</returns>
         </member>
-        <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Double)">
+        <member name="M:RedifyQuiz.Utils.Utilities.NthFibonacciNumber(System.Int64)">
             <summary>
             Gets nth Fibonacci Number
             </summary>
-            <param name="n"></param>
+            <param name="n"> nth number</param>
             <returns>integer</returns>
         </member>
         <member name="M:RedifyQuiz.Utils.Utilities.ReverseWords(System.String)">

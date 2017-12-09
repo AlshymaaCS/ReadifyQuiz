@@ -1,4 +1,5 @@
 ﻿using RedifyQuiz.Utils;
+using System;
 using System.Web.Http;
 
 namespace RedifyQuiz.Controllers
@@ -26,10 +27,21 @@ namespace RedifyQuiz.Controllers
         [HttpGet]
         public IHttpActionResult GetFibonacci(string n)
         {
-            double nth;
-            if (double.TryParse(n, out nth))
+            long nth;
+            if (long.TryParse(n, out nth))
             {
-                return Ok(Utilities.NthFibonacciNumber(nth));
+
+                try
+                {
+                    if (nth < 93 && nth > -93) //the largest known fib
+                        return Ok(Utilities.NthFibonacciNumber(nth));
+                    else
+                        return BadRequest();
+                }
+                catch (Exception)
+                {
+                    return BadRequest();
+                }
             }
             else
             {
